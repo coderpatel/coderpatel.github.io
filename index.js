@@ -58,8 +58,13 @@ function displayResults(results) {
 function addToFavourites(data){
     //console.log(data);
     if(favourites.indexOf(data) == -1){
-        let favourites = JSON.parse(localStorage.getItem('favourites'));
-        favourites.push(data);
+        if(JSON.parse(localStorage.getItem('favourites')) == null){
+            favourites.push(data);
+        }
+        else{
+            favourites = JSON.parse(localStorage.getItem('favourites'));
+            favourites.push(data);
+        }
         localStorage.setItem('favourites',JSON.stringify(favourites));
         console.log(JSON.parse(localStorage.getItem('favourites')));
     }
