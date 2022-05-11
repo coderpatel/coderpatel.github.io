@@ -18,6 +18,7 @@ const searchWrapper = document.querySelector('.wrapper');
 const displayWrapper = document.querySelector('.result');
 
 favourites=[];//favourites dish array
+localStorage.setItem('favourites',JSON.stringify(favourites));
 
 
 //taking input from keyboard
